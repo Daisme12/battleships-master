@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Battle Ships</title>
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap" rel="stylesheet">
+  </head>
+  <body data-page="mode-select">
+    <div class="splash-container">
+      <h1 class="splash-title">Battleship</h1>
+      <div class="menu-card">
+        <p class="menu-note">Choose the game mode first.</p>
+        <div class="menu-actions">
+          <a href="menu.html?mode=singlePlayer" class="btn splash-btn" data-mode="singlePlayer">Single Player</a>
+          <a href="menu.html?mode=multiPlayer" class="btn splash-btn" data-mode="multiPlayer">Multiplayer</a>
+        </div>
+      </div>
+    </div>
+
+    <img src="/assets/images/battleship-large.svg" class="splash-battleship-image">
+    <script type="module" src="assets/js/menu/menu.js"></script>
+  </body>
+</html>

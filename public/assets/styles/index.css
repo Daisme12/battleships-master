@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #f4efe4;
+  background: url('/assets/images/ship.png') center/cover no-repeat;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.splash-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.splash-title {
+  margin: 200px 0 1.5rem;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(4rem, 10vw, 8rem);
+  letter-spacing: .12em;
+  color: #fff7e6;
+  text-shadow:
+    0 0 0 #0d1117,
+    0 3px 0 #0d1117,
+    0 12px 30px rgba(0, 0, 0, .45);
+}
+
+.menu-card {
+  width: min(720px, calc(100vw - 2rem));
+  padding: 2rem;
+  border: 2px solid rgba(234, 200, 132, .45);
+  border-radius: 28px;
+  background: rgba(7, 18, 30, .72);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .38);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.menu-note {
+  margin: 0 0 1.5rem;
+  color: rgba(244, 239, 228, .8);
+  font-size: 1.05rem;
+}
+
+.menu-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: .85rem 1.5rem;
+  border: none;
+  border-radius: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  color: #2a2114;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(237, 138, 32, .28);
+}
+
+.btn:hover,
+.btn:focus {
+  filter: brightness(1.04);
+}
+
+.splash-btn {
+  min-width: 220px;
+  font-size: 1.4rem;
+}
+
+.splash-battleship-image {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .menu-card {
+    padding: 1.5rem;
+  }
+
+  .menu-actions {
+    flex-direction: column;
+  }
+
+  .splash-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

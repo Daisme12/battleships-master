@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Battle Ships Settings</title>
+    <link rel="stylesheet" href="assets/styles/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap" rel="stylesheet">
+  </head>
+  <body data-page="mode-config">
+    <div class="splash-container">
+      <h1 class="splash-title" id="config-title">Game Settings</h1>
+      <div class="menu-card">
+        <div class="menu-grid">
+          <label class="menu-field" id="difficulty-field">
+            <span>AI Difficulty</span>
+            <select id="difficulty">
+              <option value="easy">Easy - Random</option>
+              <option value="medium">Medium - Hunt Nearby</option>
+              <option value="hard">Hard - Follow Direction</option>
+            </select>
+          </label>
+
+          <label class="menu-field">
+            <span>Turn Time (seconds)</span>
+            <input id="turn-seconds" type="number" min="10" max="180" step="5" value="60">
+          </label>
+
+          <label class="menu-field">
+            <span>Match Time (seconds)</span>
+            <input id="match-seconds" type="number" min="60" max="3600" step="30" value="600">
+          </label>
+        </div>
+
+        <div class="menu-grid" id="multiplayer-room-setup" style="display:none;">
+          <div class="menu-field">
+            <span>Create Multiplayer Room</span>
+            <button id="menu-create-room" class="btn splash-btn" type="button">Create Room</button>
+          </div>
+
+          <div class="menu-field">
+            <span>Join Multiplayer Room</span>
+            <div class="menu-actions">
+              <input id="menu-join-room-code" class="room-input" type="text" maxlength="6" placeholder="Room Code">
+              <button id="menu-join-room" class="btn splash-btn" type="button">Join Room</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="room-code-display" id="menu-room-code-display" style="display:none;">Room Code: -</p>
+        <p class="menu-note" id="menu-room-status" style="display:none;">Create or join a room before entering multiplayer.</p>
+
+        <p class="menu-note" id="menu-summary"></p>
+
+        <div class="menu-actions">
+          <a href="index.html" class="btn splash-btn">Back</a>
+          <a href="singleplayer.html" class="btn splash-btn" id="start-link">Start</a>
+        </div>
+      </div>
+    </div>
+
+    <img src="/assets/images/battleship-large.svg" class="splash-battleship-image">
+    <script type="module" src="assets/js/menu/menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Battle Ships</title>
+    <link rel="stylesheet" href="assets/styles/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap" rel="stylesheet">
+  </head>
+  <body data-mode="singlePlayer">
+    <a class="back-button" href="menu.html?mode=singlePlayer">Back</a>
+
+    <div class="container">
+      <h1 class="page-title game-page-title">Battle Ship</h1>
+    </div>
+
+    <div class="container game-shell">
+      <div class="tracker-panel">
+        <h3>Your Fleet</h3>
+        <div id="user-fleet"></div>
+      </div>
+
+      <div class="board-panel">
+        <div class="container">
+          <div class="battleship-grid grid-user"></div>
+          <div class="battleship-grid grid-computer"></div>
+        </div>
+      </div>
+
+      <div class="tracker-panel">
+        <h3>Enemy Fleet</h3>
+        <div id="enemy-fleet"></div>
+      </div>
+    </div>
+
+    <div class="container hidden-info">
+      <div class="setup-buttons" id="setup-buttons">
+        <button id="start" class="btn">Start Game</button>
+        <button id="randomize" class="btn">Random Ships</button>
+        <button id="rotate" class="btn">Rotate Your Ships</button>
+      </div>
+      <div class="chat-panel">
+        <div class="chat-panel-header">
+          <h3 id="match-timer" class="info-text timer-chip">Match: 10:00</h3>
+          <h3 id="turn-timer" class="info-text timer-chip">Timer: 60s</h3>
+        </div>
+        <div class="chat-feed">
+          <h3 id="settings" class="info-text chat-line"></h3>
+        </div>
+      </div>
+      <h3 id="whose-go" class="info-text turn-banner">Your Go</h3>
+    </div>
+    <h3 id="info" class="info-alert"></h3>
+
+    <div class="container">
+      <div class="grid-display">
+        <div class="ship destroyer-container" draggable="true"><div id="destroyer-0"></div><div id="destroyer-1"></div></div>
+        <div class="ship submarine-container" draggable="true"><div id="submarine-0"></div><div id="submarine-1"></div><div id="submarine-2"></div></div>
+        <div class="ship cruiser-container" draggable="true"><div id="cruiser-0"></div><div id="cruiser-1"></div><div id="cruiser-2"></div></div>
+        <div class="ship battleship-container" draggable="true"><div id="battleship-0"></div><div id="battleship-1"></div><div id="battleship-2"></div><div id="battleship-3"></div></div>
+        <div class="ship carrier-container" draggable="true"><div id="carrier-0"></div><div id="carrier-1"></div><div id="carrier-2"></div><div id="carrier-3"></div><div id="carrier-4"></div></div>
+      </div>
+    </div>
+
+    <div class="game-over-modal" id="game-over-modal" aria-hidden="true">
+      <div class="game-over-card">
+        <h2 class="game-over-title">Battle Result</h2>
+        <p class="game-over-message" id="game-over-message">YOU WIN</p>
+        <div class="game-over-actions">
+          <button type="button" class="btn" id="play-again">Play Again</button>
+          <a class="btn secondary-btn" href="menu.html?mode=singlePlayer" id="back-to-menu">Back</a>
+          <a class="btn secondary-btn" href="index.html" id="go-home">Home</a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>
