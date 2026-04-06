@@ -22,6 +22,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function bindModeSelection() {
   const modeLinks = document.querySelectorAll('[data-mode]')
+  const openGuideButton = document.querySelector('#open-guide')
+  const closeGuideButton = document.querySelector('#close-guide')
+  const guideModal = document.querySelector('#guide-modal')
+  const guideTitle = document.querySelector('#guide-title')
+  const guideContent = document.querySelector('#guide-content')
+  const guideLangButtons = document.querySelectorAll('[data-guide-lang]')
+  const guideTranslations = {
+    en: {
+      title: 'How to Play',
+      lines: [
+        '1. Choose <strong>Single Player</strong> or <strong>Multiplayer</strong> from the main screen.',
+        '2. Open the settings page to choose AI difficulty, turn time, and total match time.',
+        '3. Place all 5 ships on the board. You can rotate ships or place them randomly before starting.',
+        '4. If you hit an enemy ship, you can shoot again. If you miss, the turn changes.',
+        '5. Sink all enemy ships before your opponent to win the match.',
+      ],
+    },
+    vi: {
+      title: 'Huong Dan Choi',
+      lines: [
+        '1. Chon <strong>Single Player</strong> hoac <strong>Multiplayer</strong> o man hinh chinh.',
+        '2. Vao trang cai dat de chon do kho AI, thoi gian moi luot va thoi gian ket thuc tran.',
+        '3. Dat du 5 tau len ban co. Ban co the xoay tau hoac dat ngau nhien truoc khi bat dau.',
+        '4. Khi ban trung, ban duoc ban tiep. Khi ban truot, luot se chuyen sang doi thu.',
+        '5. Ban chim het tau doi thuoc truoc se gianh chien thang.',
+      ],
+    },
+  }
 
   modeLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -30,6 +58,34 @@ function bindModeSelection() {
         ...current,
         mode: link.dataset.mode,
       })
+    })
+  })
+
+  openGuideButton?.addEventListener('click', () => {
+    guideModal?.classList.add('active')
+    guideModal?.setAttribute('aria-hidden', 'false')
+  })
+
+  closeGuideButton?.addEventListener('click', () => {
+    guideModal?.classList.remove('active')
+    guideModal?.setAttribute('aria-hidden', 'true')
+  })
+
+  guideModal?.addEventListener('click', event => {
+    if (event.target !== guideModal) return
+    guideModal.classList.remove('active')
+    guideModal.setAttribute('aria-hidden', 'true')
+  })
+
+  guideLangButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.dataset.guideLang
+      const translation = guideTranslations[lang]
+      if (!translation || !guideTitle || !guideContent) return
+
+      guideTitle.textContent = translation.title
+      guideContent.innerHTML = translation.lines.map(line => `<p>${line}</p>`).join('')
+      guideLangButtons.forEach(item => item.classList.toggle('active', item === button))
     })
   })
 }

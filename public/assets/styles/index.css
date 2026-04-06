@@ -67,6 +67,10 @@ body::before {
   gap: 1rem;
 }
 
+.guide-actions {
+  margin-top: 1rem;
+}
+
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -96,6 +100,106 @@ body::before {
   display: none;
 }
 
+.guide-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(7, 18, 30, .62);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+
+.guide-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.guide-card {
+  position: relative;
+  width: min(760px, calc(100vw - 2rem));
+  padding: 2rem 1.5rem 1.5rem;
+  border: 2px solid rgba(234, 200, 132, .45);
+  border-radius: 28px;
+  background: rgba(7, 18, 30, .92);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .38);
+}
+
+.guide-title {
+  margin: 0;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: .08em;
+  color: #fff7e6;
+  text-align: center;
+}
+
+.guide-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.guide-language-switch {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.guide-lang-btn {
+  padding: .55rem .9rem;
+  border: 1px solid rgba(234, 200, 132, .45);
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .12);
+  color: #fff7e6;
+  font-weight: 700;
+}
+
+.guide-lang-btn.active {
+  background: rgba(255, 255, 255, .95);
+  color: #2a2114;
+}
+
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  color: rgba(244, 239, 228, .92);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.guide-content p {
+  margin: 0;
+}
+
+.guide-close {
+  position: absolute;
+  top: .85rem;
+  right: .85rem;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .94);
+  color: #2a2114;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.guide-close:hover,
+.guide-close:focus {
+  filter: brightness(1.04);
+}
+
 @media (max-width: 720px) {
   .menu-card {
     padding: 1.5rem;
@@ -108,5 +212,18 @@ body::before {
   .splash-btn {
     width: 100%;
     min-width: 0;
+  }
+
+  .guide-card {
+    padding: 1.75rem 1.1rem 1.2rem;
+  }
+
+  .guide-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .guide-language-switch {
+    justify-content: center;
   }
 }

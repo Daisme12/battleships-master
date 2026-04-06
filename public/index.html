@@ -15,6 +15,29 @@
           <a href="menu.html?mode=singlePlayer" class="btn splash-btn" data-mode="singlePlayer">Single Player</a>
           <a href="menu.html?mode=multiPlayer" class="btn splash-btn" data-mode="multiPlayer">Multiplayer</a>
         </div>
+        <div class="menu-actions guide-actions">
+          <button type="button" class="btn splash-btn guide-btn" id="open-guide">How to Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-modal" id="guide-modal" aria-hidden="true">
+      <div class="guide-card">
+        <button type="button" class="guide-close" id="close-guide" aria-label="Close guide">x</button>
+        <div class="guide-toolbar">
+          <h2 class="guide-title" id="guide-title">How to Play</h2>
+          <div class="guide-language-switch">
+            <button type="button" class="guide-lang-btn active" data-guide-lang="en">English</button>
+            <button type="button" class="guide-lang-btn" data-guide-lang="vi" style="margin-right: 50px;">Tieng Viet</button>
+          </div>
+        </div>
+        <div class="guide-content" id="guide-content">
+          <p>1. Choose <strong>Single Player</strong> or <strong>Multiplayer</strong> from the main screen.</p>
+          <p>2. Open the settings page to choose AI difficulty, turn time, and total match time.</p>
+          <p>3. Place all 5 ships on the board. You can rotate ships or place them randomly before starting.</p>
+          <p>4. If you hit an enemy ship, you can shoot again. If you miss, the turn changes.</p>
+          <p>5. Sink all enemy ships before your opponent to win the match.</p>
+        </div>
       </div>
     </div>
 
