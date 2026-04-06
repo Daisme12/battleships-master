@@ -64,6 +64,7 @@ body::before {
   gap: .55rem;
   font-size: 1rem;
   color: #334a5f;
+  justify-content: flex-end;
 }
 
 .menu-field select,
@@ -83,8 +84,11 @@ body::before {
 }
 
 .menu-actions {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .btn {
